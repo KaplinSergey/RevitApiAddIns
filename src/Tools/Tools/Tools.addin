@@ -1,20 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
-  <AddIn Type="Command">
+  <AddIn Type="AreaCalculator">
     <Text>Command Tools</Text>
     <Description>Some description for Tools</Description>
     <Assembly>Tools.dll</Assembly>
     <FullClassName>Tools.Command</FullClassName>
     <ClientId>49a989a3-5289-4b86-8fd3-23ebb1912d0c</ClientId>
-    <VendorId>com.typepad.thebuildingcoder</VendorId>
-    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
   </AddIn>
   <AddIn Type="Application">
     <Name>Application Tools</Name>
     <Assembly>Tools.dll</Assembly>
     <FullClassName>Tools.App</FullClassName>
     <ClientId>7212fca4-ccfd-40d3-8a03-417c5c1f1123</ClientId>
-    <VendorId>com.typepad.thebuildingcoder</VendorId>
-    <VendorDescription>The Building Coder, http://thebuildingcoder.typepad.com</VendorDescription>
   </AddIn>
 </RevitAddIns>
