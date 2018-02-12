@@ -4,7 +4,7 @@
     <Text>Command Tools</Text>
     <Description>Some description for Tools</Description>
     <Assembly>Tools.dll</Assembly>
-    <FullClassName>Tools.Command</FullClassName>
+    <FullClassName>Tools.AreaCalculatorCommand</FullClassName>
     <ClientId>49a989a3-5289-4b86-8fd3-23ebb1912d0c</ClientId>
   </AddIn>
   <AddIn Type="Application">

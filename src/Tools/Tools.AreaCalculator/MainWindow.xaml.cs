@@ -13,16 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Tools.Applications.AreaCalculator.View
+namespace Tools.AreaCalculator
 {
   /// <summary>
-  /// Interaction logic for CalculatorView.xaml
+  /// Interaction logic for MainWindow.xaml
   /// </summary>
-  public partial class CalculatorView : Window
+  public partial class MainWindow : Window
   {
-    public CalculatorView()
+    public MainWindow()
     {
       InitializeComponent();
     }
+
+
   }
 }

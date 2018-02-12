@@ -2,16 +2,19 @@
 using System.Linq;
 using Autodesk.Revit.DB.Architecture;
 using Tools.Architectural.Helpers;
+using Tools.Architectural.Settings;
 
 namespace Tools.Architectural.Entities
 {
   public class RoomElement
   {
     private Room _room;
+    private readonly IRoomSettingsProvider _roomSettingsProvider;
 
-    public RoomElement(Room room)
+    public RoomElement(Room room, IRoomSettingsProvider roomSettingsProvider)
     {
       _room = room;
+      _roomSettingsProvider = roomSettingsProvider;
     }
 
     public double RoomArea
@@ -26,7 +29,7 @@ namespace Tools.Architectural.Entities
     {
       get
       {
-        return _room.GetParameters("Имя").FirstOrDefault().AsString();
+        return _room.GetParameters(_roomSettingsProvider.RoomParameterName).FirstOrDefault().AsString();
       }
     }
 
@@ -34,7 +37,7 @@ namespace Tools.Architectural.Entities
     {
       get
       {
-        return _room.GetParameters("Принадлежность").FirstOrDefault().AsString();
+        return _room.GetParameters(_roomSettingsProvider.ApartmentOwnParameterName).FirstOrDefault().AsString();
       }
     }
 
@@ -42,7 +45,7 @@ namespace Tools.Architectural.Entities
     {
       set
       {
-        _room.GetParameters("Число комнат").FirstOrDefault().Set(value);
+        _room.GetParameters(_roomSettingsProvider.RoomsCountParameterName).FirstOrDefault().Set(value);
       }
     }
 
@@ -50,7 +53,7 @@ namespace Tools.Architectural.Entities
     {
       set
       {
-        _room.GetParameters("Площадь квартиры Общая").FirstOrDefault().Set(value);
+        _room.GetParameters(_roomSettingsProvider.TotalApartmentAreaParameterName).FirstOrDefault().Set(value);
       }
     }
 
@@ -58,7 +61,7 @@ namespace Tools.Architectural.Entities
     {
       set
       {
-        _room.GetParameters("Площадь квартиры").FirstOrDefault().Set(value);
+        _room.GetParameters(_roomSettingsProvider.ApartmentAreaParameterName).FirstOrDefault().Set(value);
       }
     }
 
@@ -66,7 +69,7 @@ namespace Tools.Architectural.Entities
     {
       set
       {
-        _room.GetParameters("Площадь квартиры Жилая").FirstOrDefault().Set(value);
+        _room.GetParameters(_roomSettingsProvider.ResidentialApartmentAreaParameterName).FirstOrDefault().Set(value);
       }
     }
 
@@ -74,11 +77,11 @@ namespace Tools.Architectural.Entities
     {
       get
       {
-        return (int)EnumService.GetDecorationThickness(this.RoomName);
+        return _roomSettingsProvider.GetDecorationThickness(this.RoomName);
       }
       set
       {
-        _room.GetParameters("Толщина внутренней отделки").FirstOrDefault().Set(value * 0.0032808398950131);
+        _room.GetParameters(_roomSettingsProvider.DecorationThicknessParameterName).FirstOrDefault().Set(value * 0.0032808398950131);
       }
     }
 
@@ -86,11 +89,11 @@ namespace Tools.Architectural.Entities
     {
       get
       {
-        return _room.GetParameters("Назначение").FirstOrDefault().AsString();
+        return _room.GetParameters(_roomSettingsProvider.PurposeParameterName).FirstOrDefault().AsString();
       }
       set
       {
-        _room.GetParameters("Назначение").FirstOrDefault().Set(value);
+        _room.GetParameters(_roomSettingsProvider.PurposeParameterName).FirstOrDefault().Set(value);
       }
     }
 
@@ -99,11 +102,11 @@ namespace Tools.Architectural.Entities
     {
       get
       {
-        return EnumService.GetAreaCoefficient(this.RoomName);
+        return _roomSettingsProvider.GetAreaCoefficient(this.RoomName);
       }
       set
       {
-        _room.GetParameters("Коэффициент площади").FirstOrDefault().Set(value);
+        _room.GetParameters(_roomSettingsProvider.AreaCoefficientParameterName).FirstOrDefault().Set(value);
       }
     }
 

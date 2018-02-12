@@ -46,11 +46,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="AreaCalculator.cs" />
+    <Compile Include="AreaCalculatorCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tools.addin" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tools.AreaCalculator\Tools.AreaCalculator.csproj">
+      <Project>{616fa95b-92f0-45da-8331-11de250d1fc8}</Project>
+      <Name>Tools.AreaCalculator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

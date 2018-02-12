@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Architectural", "Tools.Architectural\Tools.Architectural.csproj", "{97EA812F-7851-4BAA-B007-C0B1D6CFD466}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Applications", "Tools.Applications\Tools.Applications.csproj", "{71D817F8-7AE1-4C9A-A23F-34F2B12E97D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.AreaCalculator", "Tools.AreaCalculator\Tools.AreaCalculator.csproj", "{616FA95B-92F0-45DA-8331-11DE250D1FC8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{97EA812F-7851-4BAA-B007-C0B1D6CFD466}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97EA812F-7851-4BAA-B007-C0B1D6CFD466}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97EA812F-7851-4BAA-B007-C0B1D6CFD466}.Release|Any CPU.Build.0 = Release|Any CPU
-		{71D817F8-7AE1-4C9A-A23F-34F2B12E97D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{71D817F8-7AE1-4C9A-A23F-34F2B12E97D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{71D817F8-7AE1-4C9A-A23F-34F2B12E97D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{71D817F8-7AE1-4C9A-A23F-34F2B12E97D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{616FA95B-92F0-45DA-8331-11DE250D1FC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{616FA95B-92F0-45DA-8331-11DE250D1FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{616FA95B-92F0-45DA-8331-11DE250D1FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{616FA95B-92F0-45DA-8331-11DE250D1FC8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

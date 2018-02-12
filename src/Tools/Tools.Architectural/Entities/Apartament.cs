@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Tools.Architectural.Settings;
 
 namespace Tools.Architectural.Entities
 {
@@ -8,12 +9,14 @@ namespace Tools.Architectural.Entities
     private readonly string _apartmentPurpose;
     private readonly string _apartmentOwn;
     private readonly IEnumerable<RoomElement> _rooms;
+    private readonly IRoomSettingsProvider _roomSettingsProvider;
 
-    public Apartament(string apartmentPurpose, string apartmentOwn, IEnumerable<RoomElement> rooms)
+    public Apartament(string apartmentPurpose, string apartmentOwn, IEnumerable<RoomElement> rooms, IRoomSettingsProvider roomSettingsProvider)
     {
       _rooms = rooms;
       _apartmentPurpose = apartmentPurpose;
       _apartmentOwn = apartmentOwn;
+      _roomSettingsProvider = roomSettingsProvider;
     }
 
     public IEnumerable<RoomElement> Rooms
@@ -47,17 +50,17 @@ namespace Tools.Architectural.Entities
 
     public double GetArea()
     {
-      return _rooms.Where(r => r.RoomName != "Лоджия" || r.RoomName != "Терраса" || r.RoomName != "Балкон").Aggregate(0.0, (s, i) => s + i.RoomAreaWithCoefficient);
+      return _rooms.Where(r => _roomSettingsProvider.RoomsForAreaCalculation().Contains(r.RoomName)).Aggregate(0.0, (s, i) => s + i.RoomAreaWithCoefficient);
     }
 
     public double GetResidentialArea()
     {
-      return _rooms.Where(r => r.RoomName == "Жилая комната" || r.RoomName == "Жилая комната с кухонным оборудованием").Aggregate(0.0, (s, i) => s + i.RoomAreaWithCoefficient);
+      return _rooms.Where(r => _roomSettingsProvider.RoomsForResidentialCalculation().Contains(r.RoomName)).Aggregate(0.0, (s, i) => s + i.RoomAreaWithCoefficient);
     }
 
     public int GetRoomsCount()
     {
-      return _rooms.Count(r => r.RoomName == "Жилая комната" || r.RoomName == "Жилая комната с кухонным оборудованием");
+      return _rooms.Count(r => _roomSettingsProvider.RoomsForCountCalculation().Contains(r.RoomName));
     }
   }
 }

@@ -6,11 +6,13 @@ using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using Autodesk.Revit.UI.Selection;
+using Tools.AreaCalculator.Model;
+using Tools.AreaCalculator;
 
 namespace Tools
 {
   [Transaction(TransactionMode.Manual)]
-  public class AreaCalculator : IExternalCommand
+  public class AreaCalculatorCommand : IExternalCommand
   {
     public Result Execute(
       ExternalCommandData commandData,
@@ -20,7 +22,8 @@ namespace Tools
       UIApplication uiapp = commandData.Application;
       UIDocument uidoc = uiapp.ActiveUIDocument;
 
-
+      //CalculatorModel calculator = new CalculatorModel(uidoc);
+      
 
       return Result.Succeeded;
     }   
