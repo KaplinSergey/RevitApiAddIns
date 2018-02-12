@@ -55,7 +55,7 @@ namespace Tools.Architectural.Entities
 
     public double GetResidentialArea()
     {
-      return _rooms.Where(r => _roomSettingsProvider.RoomsForResidentialCalculation().Contains(r.RoomName)).Aggregate(0.0, (s, i) => s + i.RoomAreaWithCoefficient);
+      return _rooms.Where(r => _roomSettingsProvider.RoomsForResidentialAreaCalculation().Contains(r.RoomName)).Aggregate(0.0, (s, i) => s + i.RoomAreaWithCoefficient);
     }
 
     public int GetRoomsCount()

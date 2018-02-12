@@ -45,25 +45,50 @@ namespace Tools.AreaCalculator.Settings
     {
       get { return _roomSettingsSection.CommonRoomSettings.RoomsCount; }
     }
-    public string TotalApartmentAreaParameterName { get; }
-    public string ApartmentAreaParameterName { get; }
-    public string ResidentialApartmentAreaParameterName { get; }
-    public string DecorationThicknessParameterName { get; }
-    public string PurposeParameterName { get; }
-    public string AreaCoefficientParameterName { get; }
-    public IEnumerable<string> RoomsForAreaCalculation()
+
+    public string TotalApartmentAreaParameterName
     {
-      throw new NotImplementedException();
+      get { return _roomSettingsSection.CommonRoomSettings.TotalApartmentArea; }
     }
 
-    public IEnumerable<string> RoomsForResidentialCalculation()
+    public string ApartmentAreaParameterName
     {
-      throw new NotImplementedException();
+      get { return _roomSettingsSection.CommonRoomSettings.ApartmentArea; }
+    }
+
+    public string ResidentialApartmentAreaParameterName
+    {
+      get { return _roomSettingsSection.CommonRoomSettings.ResidentialApartmentArea; }
+    }
+
+    public string DecorationThicknessParameterName
+    {
+      get { return _roomSettingsSection.CommonRoomSettings.DecorationThickness; }
+    }
+
+    public string PurposeParameterName
+    {
+      get { return _roomSettingsSection.CommonRoomSettings.Purpose; }
+    }
+
+    public string AreaCoefficientParameterName
+    {
+      get { return _roomSettingsSection.CommonRoomSettings.AreaCoefficient; }
+    }
+
+    public IEnumerable<string> RoomsForAreaCalculation()
+    {
+      return _roomSettingsSection.RoomTypes.OfType<RoomTypeElement>().Where(r => r.IsForAreaCalculation).Select(r => r.RoomTypeName);
+    }
+
+    public IEnumerable<string> RoomsForResidentialAreaCalculation()
+    {
+      return _roomSettingsSection.RoomTypes.OfType<RoomTypeElement>().Where(r => r.IsForResidentialAreaCalculation).Select(r => r.RoomTypeName);
     }
 
     public IEnumerable<string> RoomsForCountCalculation()
     {
-      throw new NotImplementedException();
+      return _roomSettingsSection.RoomTypes.OfType<RoomTypeElement>().Where(r => r.IsForCountCalculation).Select(r => r.RoomTypeName);
     }
   }
 }

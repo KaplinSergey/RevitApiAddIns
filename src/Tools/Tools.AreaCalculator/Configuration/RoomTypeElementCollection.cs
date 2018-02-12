@@ -13,5 +13,17 @@ namespace Tools.AreaCalculator.Configuration
     {
       return ((RoomTypeElement) element).RoomTypeName;
     }
+
+    public void Add(RoomTypeElement room)
+    {
+      LockItem = false;
+      BaseAdd(room);
+    }
+
+    public void Remove(RoomTypeElement room)
+    {
+      LockItem = false;
+      BaseRemove(room.RoomTypeName);
+    }
   }
 }

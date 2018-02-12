@@ -12,17 +12,43 @@ namespace Tools.AreaCalculator.Configuration
     }
 
     [ConfigurationProperty("decorationThicknessValue")]
-    public string DecorationThicknessValue
+    public int DecorationThicknessValue
     {
-      get { return (string) this["decorationThicknessValue"]; }
+      get { return (int)this["decorationThicknessValue"]; }
       set { this["decorationThicknessValue"] = value; }
     }
 
     [ConfigurationProperty("areaCoefficientValue")]
-    public string AreaCoefficientValue
+    public double AreaCoefficientValue
     {
-      get { return (string)this["areaCoefficientValue"]; }
+      get { return (double)this["areaCoefficientValue"]; }
       set { this["areaCoefficientValue"] = value; }
+    }
+
+    [ConfigurationProperty("isForAreaCalculation")]
+    public bool IsForAreaCalculation
+    {
+      get { return (bool)this["isForAreaCalculation"]; }
+      set { this["isForAreaCalculation"] = value; }
+    }
+
+    [ConfigurationProperty("isForResidentialAreaCalculation")]
+    public bool IsForResidentialAreaCalculation
+    {
+      get { return (bool)this["isForResidentialAreaCalculation"]; }
+      set { this["isForResidentialAreaCalculation"] = value; }
+    }
+
+    [ConfigurationProperty("isForCountCalculation")]
+    public bool IsForCountCalculation
+    {
+      get { return (bool)this["isForCountCalculation"]; }
+      set { this["isForCountCalculation"] = value; }
+    }
+
+    protected override bool IsModified()
+    {
+      return true;
     }
   }
 }

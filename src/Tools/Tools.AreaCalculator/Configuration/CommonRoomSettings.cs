@@ -66,5 +66,10 @@ namespace Tools.AreaCalculator.Configuration
       get { return (string)this["areaCoefficient"]; }
       set { this["areaCoefficient"] = value; }
     }
+
+    protected override bool IsModified()
+    {
+      return true;
+    }
   }
 }

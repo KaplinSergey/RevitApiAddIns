@@ -20,7 +20,7 @@ namespace Tools.Architectural.Settings
     string PurposeParameterName { get; }
     string AreaCoefficientParameterName { get; }
     IEnumerable<string> RoomsForAreaCalculation();
-    IEnumerable<string> RoomsForResidentialCalculation();
+    IEnumerable<string> RoomsForResidentialAreaCalculation();
     IEnumerable<string> RoomsForCountCalculation();
   }
 }
