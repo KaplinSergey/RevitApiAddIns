@@ -25,5 +25,11 @@ namespace Tools.AreaCalculator.Configuration
       LockItem = false;
       BaseRemove(room.RoomTypeName);
     }
+
+    public void Clear()
+    {
+      LockItem = false;
+      BaseClear();
+    }
   }
 }

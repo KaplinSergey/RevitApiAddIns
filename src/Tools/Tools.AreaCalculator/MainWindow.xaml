@@ -44,14 +44,14 @@
       <Label Content="Decoration Thickness" Grid.Column="0" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
       <Label Content="Area Coefficient" Grid.Column="0" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
       <TextBox Text="{Binding Purpose}" Grid.Column="1" Grid.Row="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-      <TextBox Text="Apartment Own" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-      <TextBox Text="Room Name" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-      <TextBox Text="Rooms Count" Grid.Column="1" Grid.Row="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-      <TextBox Text="Total Apartment Area" Grid.Column="1" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-      <TextBox Text="Apartment Area" Grid.Column="1" Grid.Row="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-      <TextBox Text="Residential Apartment Area" Grid.Column="1" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-      <TextBox Text="Decoration Thickness" Grid.Column="1" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
-      <TextBox Text="Area Coefficient" Grid.Column="1" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+      <TextBox Text="{Binding ApartmentOwn}" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+      <TextBox Text="{Binding RoomName}" Grid.Column="1" Grid.Row="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+      <TextBox Text="{Binding RoomsCount}" Grid.Column="1" Grid.Row="3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+      <TextBox Text="{Binding TotalApartmentArea}" Grid.Column="1" Grid.Row="4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+      <TextBox Text="{Binding ApartmentArea}" Grid.Column="1" Grid.Row="5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+      <TextBox Text="{Binding ResidentialApartmentArea}" Grid.Column="1" Grid.Row="6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+      <TextBox Text="{Binding DecorationThickness}" Grid.Column="1" Grid.Row="7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+      <TextBox Text="{Binding AreaCoefficient}" Grid.Column="1" Grid.Row="8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
     </Grid>
     <Grid Column="1" Row="1">
       <Grid.ColumnDefinitions>

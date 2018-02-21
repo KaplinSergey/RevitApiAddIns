@@ -56,12 +56,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Plugin.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Configuration\CommonRoomSettings.cs" />
     <Compile Include="Configuration\RoomSettingsSection.cs" />
     <Compile Include="Configuration\RoomTypeElement.cs" />
     <Compile Include="Configuration\RoomTypeElementCollection.cs" />
     <Compile Include="Model\CalculatorModel.cs" />
+    <Compile Include="Model\CalculatorRepository.cs" />
+    <Compile Include="Model\RoomModel.cs" />
     <Compile Include="Settings\RoomSettingsProvider.cs" />
     <Compile Include="ViewModel\CalculatorViewModel.cs" />
     <Page Include="MainWindow.xaml">

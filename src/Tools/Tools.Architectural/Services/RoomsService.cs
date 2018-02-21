@@ -7,6 +7,7 @@ using Autodesk.Revit.UI;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.DB.Architecture;
 using Tools.Architectural.Settings;
+using Tools.Common.Logger;
 
 namespace Tools.Architectural.Services
 {
@@ -14,11 +15,13 @@ namespace Tools.Architectural.Services
   {
     private readonly Document _currentDocument;
     private readonly IRoomSettingsProvider _roomSettingsProvider;
+    private readonly ILogger _logger;
 
-    public RoomsService(Document currentDocument, IRoomSettingsProvider roomSettingsProvider)
+    public RoomsService(Document currentDocument, IRoomSettingsProvider roomSettingsProvider, ILogger logger)
     {
       _currentDocument = currentDocument;
       _roomSettingsProvider = roomSettingsProvider;
+      _logger = logger;
     }
 
     public IEnumerable<Apartament> GetApartments(IEnumerable<RoomElement> rooms)
@@ -64,9 +67,9 @@ namespace Tools.Architectural.Services
       {
         apartments = this.GetApartments(rooms);
       }
-      catch (Exception ex)
+      catch (Exception e)
       {
-        TaskDialog.Show("Error", ex.Message);
+        _logger.Log(e.Message);
       }
 
       try
@@ -81,9 +84,9 @@ namespace Tools.Architectural.Services
           currentTransaction.Commit();
         }
       }
-      catch (Exception ex)
+      catch (Exception e)
       {
-        TaskDialog.Show("Error", ex.Message);
+        _logger.Log(e.Message);
       }
     }
   }

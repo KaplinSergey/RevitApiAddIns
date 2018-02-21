@@ -3,6 +3,7 @@ using System.Linq;
 using Autodesk.Revit.DB.Architecture;
 using Tools.Architectural.Helpers;
 using Tools.Architectural.Settings;
+using Tools.Common.Exceptions.ParameterExceptions;
 
 namespace Tools.Architectural.Entities
 {
@@ -29,7 +30,17 @@ namespace Tools.Architectural.Entities
     {
       get
       {
-        return _room.GetParameters(_roomSettingsProvider.RoomParameterName).FirstOrDefault().AsString();
+        string roomName;
+        try
+        {
+          roomName = _room.GetParameters(_roomSettingsProvider.RoomParameterName).FirstOrDefault().AsString();
+        }
+        catch (Exception e)
+        {
+          throw new GetParameterException($"The error has occurred when we tried get room name parameter value. Error message: {e.Message}", e.InnerException);
+        }
+
+        return roomName;
       }
     }
 

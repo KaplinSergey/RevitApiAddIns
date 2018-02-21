@@ -39,25 +39,34 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="RevitAPIUI">
-      <HintPath>$(ProgramW6432)\Autodesk\Revit 2017\RevitAPIUI.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\Tools.Architectural\bin\Debug\RevitAPIUI.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="AreaCalculatorCommand.cs" />
+    <Compile Include="Loggers\DefaultLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Tools.addin" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tools.Architectural\Tools.Architectural.csproj">
+      <Project>{97ea812f-7851-4baa-b007-c0b1d6cfd466}</Project>
+      <Name>Tools.Architectural</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tools.AreaCalculator\Tools.AreaCalculator.csproj">
       <Project>{616fa95b-92f0-45da-8331-11de250d1fc8}</Project>
       <Name>Tools.AreaCalculator</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tools.Common\Tools.Common.csproj">
+      <Project>{f6d612b5-4e0d-4141-9ab6-2a5d21c1c4bd}</Project>
+      <Name>Tools.Common</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy "$(ProjectDir)*.addin" "$(AppData)\Autodesk\REVIT\Addins\2017"

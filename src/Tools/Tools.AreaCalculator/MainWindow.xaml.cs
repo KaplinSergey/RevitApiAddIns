@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tools.AreaCalculator.ViewModel;
 
 namespace Tools.AreaCalculator
 {
@@ -25,6 +26,10 @@ namespace Tools.AreaCalculator
       InitializeComponent();
     }
 
-
+    public MainWindow(CalculatorViewModel viewModel)
+    {
+      InitializeComponent();
+      Resources["viewModel"] = viewModel;
+    }
   }
 }
