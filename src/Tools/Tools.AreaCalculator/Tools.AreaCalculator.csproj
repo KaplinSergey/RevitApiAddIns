@@ -24,6 +24,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,10 +59,6 @@
     </ApplicationDefinition>
     <Compile Include="Plugin.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
-    <Compile Include="Configuration\CommonRoomSettings.cs" />
-    <Compile Include="Configuration\RoomSettingsSection.cs" />
-    <Compile Include="Configuration\RoomTypeElement.cs" />
-    <Compile Include="Configuration\RoomTypeElementCollection.cs" />
     <Compile Include="Model\CalculatorModel.cs" />
     <Compile Include="Model\CalculatorRepository.cs" />
     <Compile Include="Model\RoomModel.cs" />
@@ -105,17 +102,15 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Tools.Architectural\Tools.Architectural.csproj">
       <Project>{97ea812f-7851-4baa-b007-c0b1d6cfd466}</Project>
       <Name>Tools.Architectural</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(ProjectDir)bin\debug\Tools.AreaCalculator.exe" "$(AppData)\Autodesk\REVIT\Addins\2017"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

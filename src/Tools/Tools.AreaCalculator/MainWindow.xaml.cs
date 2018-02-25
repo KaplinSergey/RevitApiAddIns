@@ -27,9 +27,10 @@ namespace Tools.AreaCalculator
     }
 
     public MainWindow(CalculatorViewModel viewModel)
-    {
+    {      
       InitializeComponent();
-      Resources["viewModel"] = viewModel;
+      //Resources["viewModel"] = viewModel;
+      DataContext = viewModel;
     }
   }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace Tools.AreaCalculator.Model
 {
@@ -13,6 +14,7 @@ namespace Tools.AreaCalculator.Model
     public string ResidentialApartmentArea { get; set; }
     public string DecorationThickness { get; set; }
     public string AreaCoefficient { get; set; }
-    public IList<RoomModel> RoomTypes { get; set; }   
+    [XmlArray("RoomTypes"), XmlArrayItem("Type")]
+    public List<RoomModel> RoomTypes { get; set; }   
   }
 }

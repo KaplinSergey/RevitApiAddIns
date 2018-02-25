@@ -23,7 +23,7 @@ namespace Tools.AreaCalculator.ViewModel
     {
       _roomsService = roomsService;
       _calculatorRepository = calculatorRepository;
-      _calculatorModel = calculatorRepository.GetModel();
+      _calculatorModel = calculatorRepository.GetModelFromXml();
       SaveCommand = new DelegateCommand(executeAction => this.Save(), canExecute => true);
       CalculateCommand = new DelegateCommand(executeAction => this.Calculate(), canExecute => true);
     }
@@ -82,7 +82,7 @@ namespace Tools.AreaCalculator.ViewModel
 
     public void Save()
     {
-      _calculatorRepository.SaveModel(_calculatorModel);
+      _calculatorRepository.SaveModelToXml(_calculatorModel);
     }
 
     public void Calculate()

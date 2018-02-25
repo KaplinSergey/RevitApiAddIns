@@ -6,6 +6,7 @@ using Autodesk.Revit.ApplicationServices;
 using Autodesk.Revit.Attributes;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using Tools.Converters;
 
 namespace Tools
 {
@@ -17,9 +18,9 @@ namespace Tools
 
       string thisAssemblyPath = Assembly.GetExecutingAssembly().Location;
 
-      PushButton button = ribbonPanel.AddItem(new PushButtonData("RoomsArea", "Rooms Area", thisAssemblyPath, "Tools.AreaCalculator")) as PushButton;
+      PushButton button = ribbonPanel.AddItem(new PushButtonData("RoomsArea", "Rooms Area", thisAssemblyPath, "Tools.AreaCalculatorCommand")) as PushButton;
       button.ToolTip = "Calculate rooms area";
-      //button.LargeImage = ImageConverter.BitmapToImageSource(Images.RoomArea);
+      button.LargeImage = ImageConverter.BitmapToImageSource(Images.RoomArea);
 
       return Result.Succeeded;
     }

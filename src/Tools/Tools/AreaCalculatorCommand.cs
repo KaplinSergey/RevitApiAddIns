@@ -11,6 +11,7 @@ using Tools.AreaCalculator.Model;
 using Tools.AreaCalculator;
 using Tools.AreaCalculator.Settings;
 using Tools.AreaCalculator.ViewModel;
+using Tools.Loggers;
 
 namespace Tools
 {
@@ -25,10 +26,22 @@ namespace Tools
       UIApplication uiapp = commandData.Application;
       UIDocument uidoc = uiapp.ActiveUIDocument;
 
-      CalculatorViewModel viewModel = new CalculatorViewModel(new CalculatorRepository(), new RoomsService(uidoc, new RoomSettingsProvider(), ));
-      Plugin app = new Plugin(viewModel);
-      app.Start();
+      DefaultLogger logger = new DefaultLogger();
+      Plugin app = null;
 
+      try
+      {
+        CalculatorRepository repository = new CalculatorRepository();
+        CalculatorViewModel viewModel = new CalculatorViewModel(repository, new RoomsService(uidoc.Document, new RoomSettingsProvider(repository), logger));
+        app = new Plugin(viewModel);
+        app.Start();
+      }
+      catch (Exception)
+      {
+        logger.Log("An error has occurred ");
+        app?.Stop();
+      }
+      
       return Result.Succeeded;
     }   
   }

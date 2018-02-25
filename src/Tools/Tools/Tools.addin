@@ -1,16 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <RevitAddIns>
-  <AddIn Type="AreaCalculator">
-    <Text>Command Tools</Text>
-    <Description>Some description for Tools</Description>
+  <AddIn Type="Command">
+    <Text>Area Calculator</Text>
+    <Description>Calculate area for rooms</Description>
     <Assembly>Tools.dll</Assembly>
     <FullClassName>Tools.AreaCalculatorCommand</FullClassName>
     <ClientId>49a989a3-5289-4b86-8fd3-23ebb1912d0c</ClientId>
+    <VendorId>kaplinsergey85@gmail.com</VendorId>
+    <VendorDescription>Sergey Kaplin</VendorDescription>
   </AddIn>
   <AddIn Type="Application">
-    <Name>Application Tools</Name>
+    <Name>Architectural Tools</Name>
     <Assembly>Tools.dll</Assembly>
     <FullClassName>Tools.App</FullClassName>
     <ClientId>7212fca4-ccfd-40d3-8a03-417c5c1f1123</ClientId>
+    <VendorId>kaplinsergey85@gmail.com</VendorId>
+    <VendorDescription>Sergey Kaplin</VendorDescription>
   </AddIn>
 </RevitAddIns>

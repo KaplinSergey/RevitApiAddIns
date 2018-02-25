@@ -6,10 +6,10 @@
         xmlns:vm="clr-namespace:Tools.AreaCalculator.ViewModel"
         mc:Ignorable="d"
         Title="Area Calculator" Height="500" Width="1200">
-  <Window.Resources>
-    <vm:CalculatorViewModel x:Key="viewModel"></vm:CalculatorViewModel>
-  </Window.Resources>
-  <Grid DataContext="{StaticResource viewModel}">
+  <Window.DataContext>
+    <vm:CalculatorViewModel></vm:CalculatorViewModel>
+  </Window.DataContext>
+  <Grid>
     <Grid.ColumnDefinitions>
       <ColumnDefinition Width="2*"/>
       <ColumnDefinition Width="1*"/>

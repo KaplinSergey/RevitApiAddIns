@@ -57,14 +57,13 @@ namespace Tools.Architectural.Services
 
     public void CalculateRoomArea()
     {
-      IEnumerable<Element> allRoomElements = new FilteredElementCollector(_currentDocument).OfCategory(BuiltInCategory.OST_Rooms).ToElements();
-
-      IEnumerable<RoomElement> rooms = allRoomElements.Select(e => e as Room).Select(r => new RoomElement(r, _roomSettingsProvider));
-
       IEnumerable<Apartament> apartments = null;
 
       try
       {
+        IEnumerable<Element> allRoomElements = new FilteredElementCollector(_currentDocument).OfCategory(BuiltInCategory.OST_Rooms).ToElements();
+        IEnumerable<RoomElement> rooms = allRoomElements.Select(e => e as Room).Select(r => new RoomElement(r, _roomSettingsProvider));
+
         apartments = this.GetApartments(rooms);
       }
       catch (Exception e)
