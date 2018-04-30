@@ -15,6 +15,8 @@ namespace Tools.AreaCalculator.Model
     public string DecorationThickness { get; set; }
     public string AreaCoefficient { get; set; }
     [XmlArray("RoomTypes"), XmlArrayItem("Type")]
-    public List<RoomModel> RoomTypes { get; set; }   
+    public List<RoomModel> RoomTypes { get; set; }
+    public bool IsRuLanguage { get; set; }
+    public bool IsEngLanguage { get; set; }
   }
 }

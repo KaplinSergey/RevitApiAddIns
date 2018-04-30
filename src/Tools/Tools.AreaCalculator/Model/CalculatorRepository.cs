@@ -96,7 +96,9 @@ namespace Tools.AreaCalculator.Model
             IsForCountCalculation = false,
             IsForResidentialAreaCalculation = false
           }
-        }
+        },
+        IsRuLanguage = true,
+        IsEngLanguage = false
       };
     }
   }
