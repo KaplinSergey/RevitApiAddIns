@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:Tools.AreaCalculator.ViewModel"
+        xmlns:dm="clr-namespace:Tools.AreaCalculator.Model"
         mc:Ignorable="d"
-        Title="Area Calculator" Height="500" Width="1200">
+        Title="Area Calculator" Height="500" Width="1400" Name="mainWindow">
   <Window.DataContext>
     <vm:CalculatorViewModel></vm:CalculatorViewModel>
   </Window.DataContext>
@@ -62,17 +63,20 @@
       <Button Content="{Binding Strings.ButtonCalculateName}" Grid.Column="1" Command="{Binding CalculateCommand}"/>
     </Grid>
     <DataGrid ItemsSource="{Binding RoomTypes}" Grid.Column="0" Grid.Row="0" AutoGenerateColumns="False">
+      <DataGrid.Resources>
+        <dm:BindingProxy x:Key="proxy" Data="{Binding}" />
+      </DataGrid.Resources>
       <DataGrid.Columns>
-        <DataGridTextColumn Header="Type" Binding="{Binding RoomTypeName}"/>
-        <DataGridTextColumn Header="Decoration thickness" Binding="{Binding DecorationThicknessValue}"/>
-        <DataGridTextColumn Header="Area Coefficient" Binding="{Binding AreaCoefficientValue}"/>
-        <DataGridCheckBoxColumn Header="For Area Calculation" Binding="{Binding IsForAreaCalculation}"/>
-        <DataGridCheckBoxColumn Header="For Residential Area Calculation" Binding="{Binding IsForResidentialAreaCalculation}"/>
-        <DataGridCheckBoxColumn Header="For Count Calculation" Binding="{Binding IsForCountCalculation}"/>
+        <DataGridTextColumn Header="{Binding Data.Strings.LabelType, Source={StaticResource proxy}}" Binding="{Binding RoomTypeName}"/>
+        <DataGridTextColumn Header="{Binding Data.Strings.LabelDecorationThickness, Source={StaticResource proxy}}" Binding="{Binding DecorationThicknessValue}"/>
+        <DataGridTextColumn Header="{Binding Data.Strings.LabelAreaCoefficient, Source={StaticResource proxy}}" Binding="{Binding AreaCoefficientValue}"/>
+        <DataGridCheckBoxColumn Header="{Binding Data.Strings.LabelForAreaCalculation, Source={StaticResource proxy}}" Binding="{Binding IsForAreaCalculation}"/>
+        <DataGridCheckBoxColumn Header="{Binding Data.Strings.LabelForResidentialAreaCalculation, Source={StaticResource proxy}}" Binding="{Binding IsForResidentialAreaCalculation}"/>
+        <DataGridCheckBoxColumn Header="{Binding Data.Strings.LabelForCountCalculation, Source={StaticResource proxy}}" Binding="{Binding IsForCountCalculation}"/>
         <DataGridTemplateColumn>
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
-              <Button Content="Delete"
+              <Button Content="{Binding Data.Strings.ButtonDeleteName, Source={StaticResource proxy}}"
                       Command="Delete"/>
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>

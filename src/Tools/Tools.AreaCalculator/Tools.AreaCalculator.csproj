@@ -57,6 +57,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\BindingProxy.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Commands\DelegateCommand.cs" />
     <Compile Include="Model\CalculatorModel.cs" />
