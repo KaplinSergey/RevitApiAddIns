@@ -27,14 +27,14 @@ namespace Tools.AreaCalculator.Settings
 
     public int GetDecorationThickness(string roomName)
     {
-      return _model.RoomTypes.First(r => r.RoomTypeName == roomName)
-        .DecorationThicknessValue;
+      var roomType = _model.RoomTypes.FirstOrDefault(r => r.RoomTypeName == roomName);
+      return roomType != null ? roomType.DecorationThicknessValue : 20;
     }
 
     public double GetAreaCoefficient(string roomName)
     {
-      return _model.RoomTypes.First(r => r.RoomTypeName == roomName)
-        .AreaCoefficientValue;
+      var roomType = _model.RoomTypes.FirstOrDefault(r => r.RoomTypeName == roomName);
+      return roomType != null ? roomType.AreaCoefficientValue : 1;
     }
 
     public string RoomParameterName
