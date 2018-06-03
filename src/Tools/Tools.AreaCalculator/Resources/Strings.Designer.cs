@@ -88,6 +88,15 @@ namespace Tools.AreaCalculator.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All Rooms.
+        /// </summary>
+        public static string LabelAllRooms {
+            get {
+                return ResourceManager.GetString("LabelAllRooms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Apartment Area.
         /// </summary>
         public static string LabelApartmentArea {
@@ -174,6 +183,15 @@ namespace Tools.AreaCalculator.Resources {
         public static string LabelPurpose {
             get {
                 return ResourceManager.GetString("LabelPurpose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Required for calculation Rooms.
+        /// </summary>
+        public static string LabelRequiredRooms {
+            get {
+                return ResourceManager.GetString("LabelRequiredRooms", resourceCulture);
             }
         }
         

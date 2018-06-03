@@ -62,7 +62,7 @@ namespace Tools.Architectural.Services
       try
       {
         IEnumerable<Element> allRoomElements = new FilteredElementCollector(_currentDocument).OfCategory(BuiltInCategory.OST_Rooms).ToElements();
-        IEnumerable<RoomElement> rooms = allRoomElements.Select(e => e as Room).Select(r => new RoomElement(r, _roomSettingsProvider));
+        IEnumerable<RoomElement> rooms = allRoomElements.Select(e => e as Room).Select(r => new RoomElement(r, _roomSettingsProvider)).Where(room => room.HasRequiredProperties() == true);
 
         apartments = this.GetApartments(rooms);
       }
@@ -86,6 +86,23 @@ namespace Tools.Architectural.Services
       catch (Exception e)
       {
         _logger.Log(e.Message);
+      }
+    }
+
+    public int RevitRoomsCount
+    {
+      get
+      {
+        return new FilteredElementCollector(_currentDocument).OfCategory(BuiltInCategory.OST_Rooms).ToElements().Count;
+      }
+    }
+
+    public int ArchitecturalRoomsCount
+    {
+      get
+      {
+        IEnumerable<Element> allRoomElements = new FilteredElementCollector(_currentDocument).OfCategory(BuiltInCategory.OST_Rooms).ToElements();
+        return allRoomElements.Select(e => e as Room).Select(r => new RoomElement(r, _roomSettingsProvider)).Where(room => room.HasRequiredProperties() == true).Count();
       }
     }
   }

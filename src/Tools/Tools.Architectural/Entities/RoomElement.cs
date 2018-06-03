@@ -128,5 +128,58 @@ namespace Tools.Architectural.Entities
         return Math.Round(this.RoomArea * this.AreaCoefficient, 2);
       }
     }
+
+    public bool HasRequiredProperties()
+    {
+      var roomName = _room.GetParameters(_roomSettingsProvider.RoomParameterName).FirstOrDefault();
+      if(roomName == null)
+      {
+        return false;
+      }
+
+      var apartmentOwn = _room.GetParameters(_roomSettingsProvider.ApartmentOwnParameterName).FirstOrDefault();
+      if (apartmentOwn == null)
+      {
+        return false;
+      }
+
+      var roomsCount = _room.GetParameters(_roomSettingsProvider.RoomsCountParameterName).FirstOrDefault();
+      if (roomsCount == null)
+      {
+        return false;
+      }
+
+      var totalApartmentArea = _room.GetParameters(_roomSettingsProvider.TotalApartmentAreaParameterName).FirstOrDefault();
+      if (totalApartmentArea == null)
+      {
+        return false;
+      }
+
+      var residentialApartmentArea = _room.GetParameters(_roomSettingsProvider.ResidentialApartmentAreaParameterName).FirstOrDefault();
+      if (residentialApartmentArea == null)
+      {
+        return false;
+      }
+
+      var decorationThicknesst = _room.GetParameters(_roomSettingsProvider.DecorationThicknessParameterName).FirstOrDefault();
+      if (decorationThicknesst == null)
+      {
+        return false;
+      }
+
+      var purpose = _room.GetParameters(_roomSettingsProvider.PurposeParameterName).FirstOrDefault();
+      if (purpose == null)
+      {
+        return false;
+      }
+
+      var areaCoefficient = _room.GetParameters(_roomSettingsProvider.AreaCoefficientParameterName).FirstOrDefault();
+      if (areaCoefficient == null)
+      {
+        return false;
+      }
+
+      return true;
+    }
   }
 }

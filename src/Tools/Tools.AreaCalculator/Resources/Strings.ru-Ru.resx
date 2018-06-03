@@ -126,6 +126,9 @@
   <data name="ButtonSaveName" xml:space="preserve">
     <value>Сохранить</value>
   </data>
+  <data name="LabelAllRooms" xml:space="preserve">
+    <value>Все Комнаты</value>
+  </data>
   <data name="LabelApartmentArea" xml:space="preserve">
     <value>Площадь квартиры</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="LabelPurpose" xml:space="preserve">
     <value>Назначение</value>
+  </data>
+  <data name="LabelRequiredRooms" xml:space="preserve">
+    <value>Необходимые для вычисления Комнаты</value>
   </data>
   <data name="LabelResidentialApartmentArea" xml:space="preserve">
     <value>Площадь квартиры Жилая</value>

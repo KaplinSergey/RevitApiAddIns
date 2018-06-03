@@ -99,11 +99,22 @@ namespace Tools.AreaCalculator.ViewModel
     public void Save()
     {
       _calculatorRepository.SaveModelToXml(_calculatorModel);
+      OnPropertyChanged("RequiredRoomsCount");
     }
 
     public void Calculate()
     {     
       _roomsService.CalculateRoomArea();
+    }
+
+    public int AllRoomsCount
+    {
+      get { return _roomsService.RevitRoomsCount; }
+    }
+
+    public int RequiredRoomsCount
+    {
+      get { return _roomsService.ArchitecturalRoomsCount; }
     }
 
     public bool IsRuLanguage

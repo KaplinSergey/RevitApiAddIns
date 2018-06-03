@@ -126,6 +126,9 @@
   <data name="ButtonSaveName" xml:space="preserve">
     <value>Save</value>
   </data>
+  <data name="LabelAllRooms" xml:space="preserve">
+    <value>All Rooms</value>
+  </data>
   <data name="LabelApartmentArea" xml:space="preserve">
     <value>Apartment Area</value>
   </data>
@@ -155,6 +158,9 @@
   </data>
   <data name="LabelPurpose" xml:space="preserve">
     <value>Purpose</value>
+  </data>
+  <data name="LabelRequiredRooms" xml:space="preserve">
+    <value>Required for calculation Rooms</value>
   </data>
   <data name="LabelResidentialApartmentArea" xml:space="preserve">
     <value>Residential Apartment Area</value>
