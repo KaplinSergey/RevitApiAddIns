@@ -8,10 +8,10 @@ namespace Tools.Architectural.Entities
   {
     private readonly string _apartmentPurpose;
     private readonly string _apartmentOwn;
-    private readonly IEnumerable<RoomElement> _rooms;
+    private readonly IEnumerable<IRoomElement> _rooms;
     private readonly IRoomSettingsProvider _roomSettingsProvider;
 
-    public Apartament(string apartmentPurpose, string apartmentOwn, IEnumerable<RoomElement> rooms, IRoomSettingsProvider roomSettingsProvider)
+    public Apartament(string apartmentPurpose, string apartmentOwn, IEnumerable<IRoomElement> rooms, IRoomSettingsProvider roomSettingsProvider)
     {
       _rooms = rooms;
       _apartmentPurpose = apartmentPurpose;
@@ -19,7 +19,7 @@ namespace Tools.Architectural.Entities
       _roomSettingsProvider = roomSettingsProvider;
     }
 
-    public IEnumerable<RoomElement> Rooms
+    public IEnumerable<IRoomElement> Rooms
     {
       get
       {

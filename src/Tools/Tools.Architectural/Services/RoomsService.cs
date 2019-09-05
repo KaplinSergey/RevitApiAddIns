@@ -24,9 +24,9 @@ namespace Tools.Architectural.Services
       _logger = logger;
     }
 
-    public IEnumerable<Apartament> GetApartments(IEnumerable<RoomElement> rooms)
+    public IEnumerable<Apartament> GetApartments(IEnumerable<IRoomElement> rooms)
     {
-      return rooms.GroupBy(r => new { r.ApartmentOwn, r.Purpose }).Select(r => new Apartament(r.Key.Purpose, r.Key.ApartmentOwn, r as IEnumerable<RoomElement>, _roomSettingsProvider));
+      return rooms.GroupBy(r => new { r.ApartmentOwn, r.Purpose }).Select(r => new Apartament(r.Key.Purpose, r.Key.ApartmentOwn, r as IEnumerable<IRoomElement>, _roomSettingsProvider));
     }
 
     public void UpdateApartments(IEnumerable<Apartament> apartaments)
@@ -42,9 +42,9 @@ namespace Tools.Architectural.Services
       }
     }
 
-    public void UpdateRooms(IEnumerable<RoomElement> rooms, double area, double residentialArea, double totalArea, int roomsCount)
+    public void UpdateRooms(IEnumerable<IRoomElement> rooms, double area, double residentialArea, double totalArea, int roomsCount)
     {
-      foreach (RoomElement room in rooms)
+      foreach (IRoomElement room in rooms)
       {
         room.ApartmentArea = Math.Round(UnitConverter.ConvertAreaFromMetricToFeet(area), 2);
         room.TotalApartmentArea = Math.Round(UnitConverter.ConvertAreaFromMetricToFeet(totalArea), 2);

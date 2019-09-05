@@ -7,7 +7,7 @@ using Tools.Common.Exceptions.ParameterExceptions;
 
 namespace Tools.Architectural.Entities
 {
-  public class RoomElement
+  public class RoomElement : IRoomElement
   {
     private Room _room;
     private readonly IRoomSettingsProvider _roomSettingsProvider;

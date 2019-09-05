@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools", "Tools\Tools.csproj", "{830D1B7E-9401-42D9-8165-655D8E4CA3D2}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.AreaCalculator", "Tools.AreaCalculator\Tools.AreaCalculator.csproj", "{616FA95B-92F0-45DA-8331-11DE250D1FC8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Common", "Tools.Common\Tools.Common.csproj", "{F6D612B5-4E0D-4141-9AB6-2A5D21C1C4BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tools.Architectural.Tests", "Tools.Architectural.Tests\Tools.Architectural.Tests.csproj", "{BB21E0C0-1E21-46C7-8D63-B0B88D7AC78B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,8 +35,15 @@ Global
 		{F6D612B5-4E0D-4141-9AB6-2A5D21C1C4BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6D612B5-4E0D-4141-9AB6-2A5D21C1C4BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6D612B5-4E0D-4141-9AB6-2A5D21C1C4BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB21E0C0-1E21-46C7-8D63-B0B88D7AC78B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB21E0C0-1E21-46C7-8D63-B0B88D7AC78B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB21E0C0-1E21-46C7-8D63-B0B88D7AC78B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB21E0C0-1E21-46C7-8D63-B0B88D7AC78B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C54DEF6-76DF-4207-8328-E9CE079EAC6D}
 	EndGlobalSection
 EndGlobal

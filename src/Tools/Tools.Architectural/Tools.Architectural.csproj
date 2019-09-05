@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Apartament.cs" />
+    <Compile Include="Entities\IRoomElement.cs" />
     <Compile Include="Entities\RoomElement.cs" />
     <Compile Include="Helpers\UnitConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
